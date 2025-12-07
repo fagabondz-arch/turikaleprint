@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Turikale Print/Beranda</title>
+
+    <!-- stylesheet -->
+    <link rel="stylesheet" href="src/style.css" />
+    <link rel="icon" type="image/jpg" href="public/Logo-Icon-Turikale-01.jpg" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+      <div class="nav-container">
+        <div class="nav-left">
+          <img
+            src="public/Logo Biru - Turikale Print.png"
+            alt="Turikale Logo"
+            class="nav-logo"
+          />
+        </div>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="profil.html">Profil</a></li>
+          <li><a href="#courses">Aset logo</a></li>
+          <li><a href="#contact">Mini games</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="burger" id="burger" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header id="home" class="hero">
+      <div class="hero-inner">
+        <div class="hero-text">
+          <h1>Kembangkan Bisnismu dengan Cara Baru</h1>
+          <p>
+            Cetak cepat & berkualitas: banner, stiker, brosur, undangan — semua
+            selesai tanpa ribet.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#lokasi"
+              ><button class="btn-primary">Lokasi kami</button></a
+            >
+          </div>
+        </div>
+
+        <figure class="hero-image" aria-hidden="true">
+          <img
+            src="public/hero-banner-2.jpeg"
+            alt="Hero illustration placeholder"
+          />
+        </figure>
+      </div>
+    </header>
+
+    <!-- SEARCH 
+    <section class="search-section" id="search">
+      <div class="section-inner">
+        <h2>Cari Produk Cetak</h2>
+        <div class="search-box">
+          <input
+            id="searchInput"
+            type="text"
+            placeholder="Cari produk cetak..."
+          />
+          <button id="searchBtn" class="btn-primary">Cari</button>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- KALKULATOR CETAK -->
+    <section id="kalkulator" class="calculator-section">
+      <div class="section-inner">
+        <h2>Hitung Harga Cetak</h2>
+
+        <div class="calc-box">
+          <div class="form-group">
+            <label>Panjang (cm)</label>
+            <input type="number" id="panjang" placeholder="contoh: 200" />
+          </div>
+
+          <div class="form-group">
+            <label>Lebar (cm)</label>
+            <input type="number" id="lebar" placeholder="contoh: 100" />
+          </div>
+
+          <div class="form-group">
+            <label>Pilih Opsi</label>
+
+            <div class="calc-options">
+              <label>
+                <input type="radio" name="opsiDesain" value="cetak" checked />
+                <span>Hanya Cetak</span>
+              </label>
+
+              <label>
+                <input type="radio" name="opsiDesain" value="desain50" />
+                <span>Didesainkan &lt; 50%</span>
+              </label>
+
+              <label>
+                <input type="radio" name="opsiDesain" value="desain100" />
+                <span>Didesainkan &gt; 50%</span>
+              </label>
+            </div>
+          </div>
+
+          <button id="hitungHargaBtn" class="btn-primary calc-submit">
+            Hitung Harga
+          </button>
+
+          <div id="hasilHarga" class="calc-result"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFIT -->
+    <section id="benefit" class="benefit">
+      <div class="section-inner">
+        <h2>Mengapa Memilih Kami?</h2>
+        <div class="benefit-grid">
+          <article class="benefit-card">
+            <div class="icon">🚀</div>
+            <h3>Cepat</h3>
+            <p>Proses produksi kilat tanpa mengurangi kualitas.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="icon">🎨</div>
+            <h3>Berkualitas</h3>
+            <p>Hasil cetak tajam dan warna akurat.</p>
+          </article>
+
+          <article class="benefit-card">
+            <div class="icon">💸</div>
+            <h3>Harga Ramah</h3>
+            <p>Pilihan paket yang pas untuk semua skala kebutuhan.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR PRODUCTS -->
+    <section id="courses" class="courses">
+      <div class="section-inner">
+        <h2>Produk Populer</h2>
+        <div class="course-grid">
+          <article class="course-card">
+            <img src="public/banner-section.jpeg" alt="Banner" />
+            <div class="card-body">
+              <h3>Banner Full Color</h3>
+              <p>Ukuran custom, bahan premium.</p>
+              <div class="card-footer">
+                <strong>Rp25.000</strong>
+                <button class="small-cta">Pesan</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="public/sticker-section.jpeg" alt="Stiker" />
+            <div class="card-body">
+              <h3>Stiker</h3>
+              <p>Potong rapi, tahan cuaca.</p>
+              <div class="card-footer">
+                <strong>Rp10.000</strong>
+                <button class="small-cta">Pesan</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="course-card">
+            <img src="public/brosur-section.jpeg" alt="Brosur" />
+            <div class="card-body">
+              <h3>Brosur</h3>
+              <p>Kertas premium, dua sisi.</p>
+              <div class="card-footer">
+                <strong>Rp20.000</strong>
+                <button class="small-cta">Pesan</button>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAP SECTION -->
+    <section class="map-section" id="lokasi">
+      <div class="container">
+        <h2 class="map-title">Lokasi Toko Kami</h2>
+
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12399.991546990228!2d119.56054513013632!3d-5.016733218477277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dbef92997e8dd0b%3A0xf34aa0af5aa85dd9!2sTurikale%20Print!5e1!3m2!1sid!2sid!4v1765005858179!5m2!1sid!2sid"
+            width="800"
+            height="600"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================
+     WHATSAPP FLOATING BUTTON
+================================ -->
+    <div id="waButton">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+        alt="WA"
+      />
+    </div>
+
+    <div id="waPopup" class="hidden">
+      <div class="wa-header">
+        <span>WhatsApp</span>
+        <button id="waClose">X</button>
+      </div>
+
+      <div class="wa-body">
+        <div class="wa-bubble">
+          Halo 👋 <br />Klik Open Chat Untuk Menghubungi Kami.
+        </div>
+
+        <a href="#" id="waOpenBtn" class="wa-open-btn">Open chat ➤</a>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+      <div class="section-inner">
+        <div class="footer-grid">
+          <div>
+            <img
+              src="public/Logo Biru - Turikale Print.png"
+              alt="Logo"
+              class="footer-logo"
+            />
+            <p>Turikale Print — solusi cetak modern dan cepat.</p>
+          </div>
+
+          <div>
+            <h4>Kontak</h4>
+            <p>Jl. Nasrun Amrullah No. 5, Ruko Rajana</p>
+            <p>email@turikaleprint.id</p>
+          </div>
+
+          <div>
+            <h4>Jam Operasi</h4>
+            <p>Senin - Minggu: 08:00 - 21:00</p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <small>© 2025 Turikale Print · All rights reserved</small>
+        </div>
+      </div>
+    </footer>
+
+    <!-- scripts -->
+    <script src="src/main.js"></script>
+  </body>
+</html>
