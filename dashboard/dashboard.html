@@ -1,0 +1,575 @@
+<!doctype html>
+
+<html class="light" lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Turikale Print - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../Logo-Icon-TurikalePrint.jpg"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "accent-success": "#07883b",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased"
+  >
+    <div class="flex min-h-screen">
+      <!-- Sidebar Navigation -->
+      <aside
+        class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col fixed h-full transition-colors duration-300"
+      >
+        <div class="p-6 flex items-center gap-3">
+          <img
+            src="../assets/images/Logo Biru-TurikalePrint.png"
+            alt="Turikale Print"
+            class="h-10 w-auto"
+          />
+        </div>
+        <nav class="flex-1 px-4 space-y-1 mt-4">
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary group"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[22px]">dashboard</span>
+            <span class="text-sm font-medium">Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+            href="../admin/kelola-logo.html"
+          >
+            <span class="material-symbols-outlined text-[22px]">image</span>
+            <span class="text-sm font-medium">Kelola Logo</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+            href="../admin/kelola-logo.html"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >description</span
+            >
+            <span class="text-sm font-medium">Kelola Artikel</span>
+          </a>
+          <div
+            class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800"
+          >
+            <a
+              class="hidden items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              <span class="text-sm font-medium">Pengaturan</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-500 hover:bg-red-50 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">logout</span>
+              <span class="text-sm font-medium">Keluar</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 ml-64 p-8">
+        <!-- Header Section -->
+        <div
+          class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8"
+        >
+          <div>
+            <h2
+              class="text-3xl font-black text-slate-900 dark:text-white tracking-tight"
+            >
+              Halo, Admin!
+            </h2>
+            <p class="text-slate-500 dark:text-slate-400">
+              Selamat datang di dashboard pengelolaan konten Turikale Print.
+            </p>
+          </div>
+        </div>
+        <!-- Stats Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                Total Logo
+              </p>
+              <span class="material-symbols-outlined text-primary">image</span>
+            </div>
+            <div class="flex items-end gap-2">
+              <p class="text-3xl font-bold text-slate-900 dark:text-white">
+                1,240
+              </p>
+              <p class="text-accent-success text-sm font-medium mb-1">+12%</p>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                Total Artikel
+              </p>
+              <span class="material-symbols-outlined text-primary"
+                >article</span
+              >
+            </div>
+            <div class="flex items-end gap-2">
+              <p class="text-3xl font-bold text-slate-900 dark:text-white">
+                85
+              </p>
+              <p class="text-accent-success text-sm font-medium mb-1">+5%</p>
+            </div>
+          </div>
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+          >
+            <div class="flex items-center justify-between mb-2">
+              <p class="text-slate-500 dark:text-slate-400 text-sm font-medium">
+                Total Kunjungan
+              </p>
+              <span class="material-symbols-outlined text-primary"
+                >trending_up</span
+              >
+            </div>
+            <div class="flex items-end gap-2">
+              <p class="text-3xl font-bold text-slate-900 dark:text-white">
+                12,543
+              </p>
+              <p class="text-accent-success text-sm font-medium mb-1">+18%</p>
+            </div>
+          </div>
+        </div>
+        <!-- Content Management Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Logo Terbaru Table -->
+          <div
+            class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden"
+          >
+            <div
+              class="p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center"
+            >
+              <h3 class="font-bold text-lg">Logo Terbaru</h3>
+              <a
+                class="text-primary text-sm font-medium hover:underline"
+                href="../admin/kelola-logo.html"
+                >Lihat Semua</a
+              >
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800/50">
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase"
+                    >
+                      Preview
+                    </th>
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase"
+                    >
+                      Nama Logo
+                    </th>
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase"
+                    >
+                      Kategori
+                    </th>
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase text-right"
+                    >
+                      Aksi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr>
+                    <td class="px-5 py-4">
+                      <div
+                        class="size-10 rounded bg-slate-100 flex items-center justify-center overflow-hidden border border-slate-200"
+                      >
+                        <img
+                          class="w-full h-full object-cover"
+                          data-alt="Abstract colorful geometric company logo design"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuAu78JGi2nyd-zC3QBLhTytTrChc5dOY46sqdAZvv2rpI4Hki9WXwAS1nirHC4GzBgejTN-4m7JPLhT6vvR6q0GDWfsMFBbR3b-WEw2iOOQKi5_u5CYcBCc9Y7_afINmTkp9AzCs2Zo1ePk0d0oPyaaF3oPKbZWEeGnOFNPnEUvIRz8e8uVz0d_Mzi5H2daKggF-60BkBfmnox2whJJuC2Z2S2qQq3HgvCW7FJL2HL9zP18WaJGP7qO4DN8bx44pcpmsmsjc02SqETP"
+                        />
+                      </div>
+                    </td>
+                    <td class="px-5 py-4 text-sm font-medium">
+                      Logo Creative Studio
+                    </td>
+                    <td class="px-5 py-4 text-sm text-slate-500">Sekolah</td>
+                    <td class="px-5 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-1.5 text-primary hover:bg-primary/10 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1.5 text-red-500 hover:bg-red-50 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-4">
+                      <div
+                        class="size-10 rounded bg-slate-100 flex items-center justify-center overflow-hidden border border-slate-200"
+                      >
+                        <img
+                          class="w-full h-full object-cover"
+                          data-alt="Minimalist modern letter based logo icon"
+                          src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoaEBhjPXZmzgHFd-dJOoE9wla82tCe4hPLW18H7Xfl_7H_g8IZEX3w1DlHN_EtRKduvetN82hPUSsOml3c0WrK5w7gqvapF4TL8xpDiptDYBsLfD9OeXPDAG46x0HhiymrwyrZambCQ8nG6Bl-LLMlbJoOCj1TTYdSFlBOcWVl8OINCU0b7LSMo9GPMhMZQx60XXlUr5uQmRFMoRufO5AfiE3UPIAzbn18VAAUbFZa9AM7z_Px2sYy_bW-LWjkom8sx66qweqTlXl"
+                        />
+                      </div>
+                    </td>
+                    <td class="px-5 py-4 text-sm font-medium">
+                      TechNova Badge
+                    </td>
+                    <td class="px-5 py-4 text-sm text-slate-500">
+                      Pemerintahan
+                    </td>
+                    <td class="px-5 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-1.5 text-primary hover:bg-primary/10 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1.5 text-red-500 hover:bg-red-50 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <!-- Artikel Terbaru Table -->
+          <div
+            class="bg-white dark:bg-slate-900 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden"
+          >
+            <div
+              class="p-5 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center"
+            >
+              <h3 class="font-bold text-lg">Artikel Terbaru</h3>
+              <a
+                class="text-primary text-sm font-medium hover:underline"
+                href="../admin/kelola-artikel.html"
+                >Lihat Semua</a
+              >
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left border-collapse">
+                <thead>
+                  <tr class="bg-slate-50 dark:bg-slate-800/50">
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase"
+                    >
+                      Judul
+                    </th>
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase"
+                    >
+                      Status
+                    </th>
+                    <th
+                      class="px-5 py-3 text-xs font-bold text-slate-500 uppercase text-right"
+                    >
+                      Aksi
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                  <tr>
+                    <td class="px-5 py-4">
+                      <div class="text-sm font-medium line-clamp-1">
+                        Tips Memilih Warna Cetak yang Akurat
+                      </div>
+                      <div class="text-[10px] text-slate-400">
+                        Diposting 2 jam yang lalu
+                      </div>
+                    </td>
+                    <td class="px-5 py-4">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-accent-success/10 text-accent-success text-[10px] font-bold uppercase"
+                        >Published</span
+                      >
+                    </td>
+                    <td class="px-5 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-1.5 text-primary hover:bg-primary/10 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1.5 text-red-500 hover:bg-red-50 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="px-5 py-4">
+                      <div class="text-sm font-medium line-clamp-1">
+                        Mengenal Jenis Bahan Banner Terbaik
+                      </div>
+                      <div class="text-[10px] text-slate-400">
+                        Draft - 1 hari yang lalu
+                      </div>
+                    </td>
+                    <td class="px-5 py-4">
+                      <span
+                        class="px-2 py-0.5 rounded-full bg-slate-100 text-slate-500 text-[10px] font-bold uppercase"
+                        >Draft</span
+                      >
+                    </td>
+                    <td class="px-5 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-1.5 text-primary hover:bg-primary/10 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-1.5 text-red-500 hover:bg-red-50 rounded"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <!-- Form Sections -->
+        <div class="mt-12 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <!-- Upload Logo Form -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+          >
+            <h3 class="font-bold text-xl mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary"
+                >cloud_upload</span
+              >
+              Tambah Logo Baru
+            </h3>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold mb-1"
+                  >File Logo</label
+                >
+                <div
+                  class="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-lg p-8 flex flex-col items-center justify-center text-slate-400 bg-slate-50 dark:bg-slate-800/30 hover:border-primary/50 transition-colors cursor-pointer"
+                >
+                  <span class="material-symbols-outlined text-4xl mb-2"
+                    >upload_file</span
+                  >
+                  <p class="text-sm">Klik atau seret file ke sini</p>
+                  <p class="text-xs mt-1">PNG (Maks. 1 MB)</p>
+                </div>
+              </div>
+              <div class="grid grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-semibold mb-1">Nama</label>
+                  <input
+                    class="w-full rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                    placeholder="e.g. Logo Kabupaten Maros, Logo SMPN 1 Maros"
+                    type="text"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-semibold mb-1"
+                    >Kategori</label
+                  >
+                  <select
+                    class="w-full rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                  >
+                    <option>Sekolah</option>
+                    <option>Pemerintahan</option>
+                    <option>Universitas</option>
+                    <option>Organisasi</option>
+                  </select>
+                </div>
+              </div>
+              <button
+                class="w-full bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 shadow-lg shadow-primary/20 transition-all"
+                type="submit"
+              >
+                Unggah Logo
+              </button>
+            </form>
+          </div>
+          <!-- Add Article Form -->
+          <div
+            class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm"
+          >
+            <h3 class="font-bold text-xl mb-6 flex items-center gap-2">
+              <span class="material-symbols-outlined text-primary"
+                >edit_note</span
+              >
+              Tambah Artikel Baru
+            </h3>
+            <form class="space-y-4">
+              <div>
+                <label class="block text-sm font-semibold mb-1"
+                  >Judul Artikel</label
+                >
+                <input
+                  class="w-full rounded-lg border-slate-200 dark:border-slate-800 dark:bg-slate-800 focus:ring-primary focus:border-primary text-sm"
+                  placeholder="Masukkan judul menarik..."
+                  type="text"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-semibold mb-1"
+                  >Gambar Utama</label
+                >
+                <div class="flex items-center gap-4">
+                  <div
+                    class="size-16 rounded-lg bg-slate-100 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 flex items-center justify-center text-slate-400 shrink-0"
+                  >
+                    <span class="material-symbols-outlined">image</span>
+                  </div>
+                  <button
+                    class="px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800"
+                    type="button"
+                  >
+                    Pilih Gambar
+                  </button>
+                </div>
+              </div>
+              <div>
+                <label class="block text-sm font-semibold mb-1">Konten</label>
+                <div
+                  class="border border-slate-200 dark:border-slate-800 rounded-lg overflow-hidden"
+                >
+                  <div
+                    class="bg-slate-50 dark:bg-slate-800 p-2 border-b border-slate-200 dark:border-slate-800 flex gap-2"
+                  >
+                    <button
+                      class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >format_bold</span
+                      >
+                    </button>
+                    <button
+                      class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >format_italic</span
+                      >
+                    </button>
+                    <button
+                      class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >link</span
+                      >
+                    </button>
+                    <button
+                      class="p-1 hover:bg-slate-200 dark:hover:bg-slate-700 rounded"
+                      type="button"
+                    >
+                      <span class="material-symbols-outlined text-xl"
+                        >format_list_bulleted</span
+                      >
+                    </button>
+                  </div>
+                  <textarea
+                    class="w-full border-none focus:ring-0 dark:bg-slate-900 text-sm"
+                    placeholder="Tulis artikel Anda di sini..."
+                    rows="4"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="flex gap-3 pt-2">
+                <button
+                  class="flex-1 border border-slate-200 dark:border-slate-700 py-2.5 rounded-lg font-bold text-sm text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800"
+                  type="button"
+                >
+                  Simpan Draft
+                </button>
+                <button
+                  class="flex-1 bg-primary text-white py-2.5 rounded-lg font-bold text-sm hover:bg-primary/90 shadow-lg shadow-primary/20"
+                  type="submit"
+                >
+                  Publikasikan
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

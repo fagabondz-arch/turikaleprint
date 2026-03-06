@@ -1,0 +1,634 @@
+<!doctype html>
+
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../Logo-Icon-TurikalePrint.jpg"
+    />
+    <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#136dec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101822",
+            },
+            fontFamily: {
+              display: ["Inter"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+    <title>Admin Dashboard - Kelola Artikel Turikale Print</title>
+  </head>
+  <body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100"
+  >
+    <div class="flex min-h-screen">
+      <!-- Sidebar -->
+      <aside
+        class="w-64 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 hidden lg:flex flex-col"
+      >
+        <div class="p-6 flex items-center gap-3">
+          <img
+            src="../assets/images/Logo Biru-TurikalePrint.png"
+            alt="Turikale Print"
+            class="h-10 w-auto"
+          />
+        </div>
+        <nav class="flex-1 px-4 space-y-2 mt-4">
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors"
+            href="../admin/dashboard.html"
+          >
+            <span class="material-symbols-outlined">dashboard</span>
+            <span class="text-sm font-medium">Dashboard</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors group"
+            href="../admin/kelola-logo.html"
+          >
+            <span class="material-symbols-outlined text-[22px]">image</span>
+            <span class="text-sm font-medium">Kelola Logo</span>
+          </a>
+          <a
+            class="flex items-center gap-3 px-3 py-2 rounded-lg bg-primary/10 text-primary transition-colors"
+            href="#"
+          >
+            <span class="material-symbols-outlined text-[22px]"
+              >description</span
+            >
+            <span class="text-sm font-medium">Kelola Artikel</span>
+          </a>
+
+          <div
+            class="pt-4 mt-4 border-t border-slate-200 dark:border-slate-800"
+          >
+            <a
+              class="hidden flex items-center gap-3 px-3 py-2 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-primary/10 hover:text-primary transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">settings</span>
+              <span class="text-sm font-medium">Pengaturan</span>
+            </a>
+            <a
+              class="flex items-center gap-3 px-3 py-2 rounded-lg text-red-500 hover:bg-red-50 transition-colors"
+              href="#"
+            >
+              <span class="material-symbols-outlined">logout</span>
+              <span class="text-sm font-medium">Keluar</span>
+            </a>
+          </div>
+        </nav>
+      </aside>
+      <!-- Main Content -->
+      <main class="flex-1 flex flex-col h-screen overflow-y-auto">
+        <!-- Header Nav -->
+        <header
+          class="h-16 border-b border-slate-200 dark:border-slate-800 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md sticky top-0 z-10 flex items-center justify-between px-8"
+        >
+          <h2 class="text-xl font-bold">Kelola Artikel</h2>
+        </header>
+        <!-- Dashboard Content -->
+        <div class="p-8">
+          <!-- Action Bar -->
+          <div
+            class="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8"
+          >
+            <div>
+              <h1 class="text-3xl font-black tracking-tight">Daftar Artikel</h1>
+              <p class="text-slate-500 mt-1">
+                Manajemen konten dan publikasi artikel blog untuk optimasi SEO.
+              </p>
+            </div>
+          </div>
+          <!-- Stats/Filter Row (Optional enhancement) -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600"
+              >
+                <span class="material-symbols-outlined">description</span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-sm">Total Artikel</p>
+                <p class="text-2xl font-bold">124</p>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-green-50 dark:bg-green-900/20 flex items-center justify-center text-green-600"
+              >
+                <span class="material-symbols-outlined">check_circle</span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-sm">Diterbitkan</p>
+                <p class="text-2xl font-bold">98</p>
+              </div>
+            </div>
+            <div
+              class="bg-white dark:bg-slate-900 p-6 rounded-2xl border border-slate-200 dark:border-slate-800 flex items-center gap-4"
+            >
+              <div
+                class="w-12 h-12 rounded-xl bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600"
+              >
+                <span class="material-symbols-outlined">edit_document</span>
+              </div>
+              <div>
+                <p class="text-slate-500 text-sm">Draft</p>
+                <p class="text-2xl font-bold">26</p>
+              </div>
+            </div>
+          </div>
+          <!-- Table Container -->
+          <div
+            class="bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 overflow-hidden"
+          >
+            <div
+              class="p-6 border-b border-slate-200 dark:border-slate-800 flex flex-col sm:flex-row gap-4 justify-between items-center"
+            >
+              <div class="relative w-full sm:w-80">
+                <span
+                  class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400"
+                  >search</span
+                >
+                <input
+                  class="w-full pl-10 pr-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg dark:bg-slate-800 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-sm transition-all"
+                  placeholder="Cari judul atau penulis..."
+                  type="text"
+                />
+              </div>
+              <div class="flex gap-2 w-full sm:w-auto">
+                <button
+                  class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors"
+                >
+                  <span class="material-symbols-outlined text-sm"
+                    >filter_list</span
+                  >
+                  Filter
+                </button>
+              </div>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-left">
+                <thead>
+                  <tr
+                    class="bg-slate-50 dark:bg-slate-800/50 text-slate-500 text-xs font-bold uppercase tracking-wider"
+                  >
+                    <th class="px-6 py-4">Gambar</th>
+                    <th class="px-6 py-4">Judul Artikel</th>
+                    <th class="px-6 py-4">Penulis</th>
+                    <th class="px-6 py-4">Status</th>
+                    <th class="px-6 py-4">Tanggal</th>
+                    <th class="px-6 py-4 text-right">Aksi</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200 dark:divide-slate-800">
+                  <!-- Row 1 -->
+                  <tr
+                    class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-4">
+                      <div
+                        class="w-16 h-10 rounded-md bg-slate-100 overflow-hidden"
+                        data-alt="Thumbnail image for article about printing tips"
+                        style="
+                          background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuC15dIaRfUXw7eBkGOpwofvBOHub2K7N0qMsUikeLaOQ6yFOCyuBsJKt8IyprRX11ZYgagH_SJTBhQHwUAdkOeqH-VpkIHBEBF6p533pMdc_oZ2D6S0MWvhlzb9g6qxlxTcS6Z0lV5FEQu7H6czZdhqGTcIRbg2kS1hGGAzZbiO_HklvHon5atw4dyUzj7kcZORRAWNzXpClUMcF7RINQuosMHZcdi8rPSC16VcdMqXtCBohMcNFaUAkXP3ODzq6DL2TIlEjFZCSdJI&quot;);
+                          background-size: cover;
+                        "
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <p class="font-semibold text-sm line-clamp-1">
+                        5 Tips Cetak Brosur Menarik Untuk Bisnis UMKM
+                      </p>
+                      <p class="text-xs text-slate-400">Tips &amp; Trick</p>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-6 h-6 rounded-full bg-slate-200"
+                          data-alt="Author avatar"
+                          style="
+                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuD5yZh2YUxcRlN7jL_NbFtz3W47HXhtiIFPLzjsl1o6hRCFhofeHpQ3E6qh-Z_ITVGg5p2AtrnYCK1cpRP7Ka3qzlpDH-LmLoqsEOpxc-Rh0Rocyl3MKq2E5bOlvUWQm91AfwKm10_9_RM6GPnTjP0SXxJBcwFGRgfEhdKYB_8R0mfb-h1RMKSWKSIQieeOZZ1tlrdwCJaoXXHSH8a_Kos187lB2gCFg3YVBgzzwFVCmiTzkgu01VOA9jcv1BSxo0l42gGiepuUZsBt&quot;);
+                            background-size: cover;
+                          "
+                        ></div>
+                        <span class="text-sm">Admin Turikale</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                        >Published</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-500">
+                      24 Okt 2023
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-2 text-slate-400 hover:text-primary transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 2 -->
+                  <tr
+                    class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-4">
+                      <div
+                        class="w-16 h-10 rounded-md bg-slate-100 overflow-hidden"
+                        data-alt="Thumbnail image for CMYK vs RGB color article"
+                        style="
+                          background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuCABXacHETQ1FgNh32P063Q1e8P02a9nVlBeixYI79uMf72gAWGFilI0KUPhp0JuAeULZ5STIpDDDu2sd6pe3-Zg4udbhJa2IyL8QeWJWkwbwLwTbVQKUY5CzZKFCecg1CWjMK17PDrfOgjdzVE2I8NhxQ30wO5qLBsPz0XGVzkNIhvyaYWz4IBXtYojsr8qtD4sSKhIhBKmsx2ZH79dgyUczIBeqYVlQ0-zfC1-jc8N95B6Z8lopJsbB6m9IgcetK4aoSbgVCqoT4l&quot;);
+                          background-size: cover;
+                        "
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <p class="font-semibold text-sm line-clamp-1">
+                        Mengenal Perbedaan Warna CMYK vs RGB
+                      </p>
+                      <p class="text-xs text-slate-400">Edukasi</p>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-6 h-6 rounded-full bg-slate-200"
+                          data-alt="Author avatar"
+                          style="
+                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBPwSLflqEVkiOTeQgn5TM57gA5B9uBEO_rAMozpWHCLSdGi2lriI7FF9rWoEnjoVTo7-jFNQ2sqbxiKpEUks820GcSpLAlxLQuXsSirboEzD4ao8kp30qGPMx_AzQz5qIV5tGzbj3uQhCgWDeH8pnH64Xb73CFmqb-pMtwFRSyIUwTOI_JZJgoIdWAtQt-vTQ505wI0p8irmXSWowg-INDRKKZZMaIMo34jacdVEokCdhhs_NQHdqJ6ogkXTyIRguHSQQrndPM2NyW&quot;);
+                            background-size: cover;
+                          "
+                        ></div>
+                        <span class="text-sm">Budi Santoso</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-800 dark:bg-slate-800 dark:text-slate-400"
+                        >Draft</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-500">
+                      22 Okt 2023
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-2 text-slate-400 hover:text-primary transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                  <!-- Row 3 -->
+                  <tr
+                    class="hover:bg-slate-50/50 dark:hover:bg-slate-800/30 transition-colors"
+                  >
+                    <td class="px-6 py-4">
+                      <div
+                        class="w-16 h-10 rounded-md bg-slate-100 overflow-hidden"
+                        data-alt="Thumbnail image for promo article"
+                        style="
+                          background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBcC_ldhtird4QLCZCbjtav9Q9Ed2xJDl1G3UNTIB4hWsl1JjOobNpLr_Og4eqzcuWxs70HEPy-w2BqMjEsoeaFroVec2ILcK6PSAWXprmQUdeA96324sh1roV9uM4x7h55V3tk74cfR9wjAaifp5jegve6mtV9gwA743igtwnEIfVE9-meuqE07Fp_67i8_OTJGiqofN_1drfuSe-hwa6mKOokKwQN2vPSgL9cMf22OaIS8VnMr5ijc3SkVomySFaG8GqkqL8QG7JY&quot;);
+                          background-size: cover;
+                        "
+                      ></div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <p class="font-semibold text-sm line-clamp-1">
+                        Promo Member Baru Turikale: Diskon Hingga 50%
+                      </p>
+                      <p class="text-xs text-slate-400">Promo</p>
+                    </td>
+                    <td class="px-6 py-4">
+                      <div class="flex items-center gap-2">
+                        <div
+                          class="w-6 h-6 rounded-full bg-slate-200"
+                          data-alt="Author avatar"
+                          style="
+                            background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuBubBYC9zzusoMjWQTD7b3PKznhaFoBy_d0ydcxWXPeC-Y0-k-nlDhaaRjSWxlKAiwj4mT9GV3hOGaKIq3D4XwZtuuyAz6eTf0OIy6ALEBLyF2fWbSyfdlOlW-tiUhAgA24HrQSHRaQPaxepZ7-xZ2cY50iLG9RS__RIrdGa9WZDo8et_xgssUAKgPuSRdg485NshXKgGI_hlzaWPvngn-jwW8wjLQehG3xEPrK1LpPJj3cpJEdcRgqKpezQ6WjYEFbdtr8_e9paDzJ&quot;);
+                            background-size: cover;
+                          "
+                        ></div>
+                        <span class="text-sm">Admin Turikale</span>
+                      </div>
+                    </td>
+                    <td class="px-6 py-4">
+                      <span
+                        class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-400"
+                        >Published</span
+                      >
+                    </td>
+                    <td class="px-6 py-4 text-sm text-slate-500">
+                      20 Okt 2023
+                    </td>
+                    <td class="px-6 py-4 text-right">
+                      <div class="flex justify-end gap-2">
+                        <button
+                          class="p-2 text-slate-400 hover:text-primary transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >edit</span
+                          >
+                        </button>
+                        <button
+                          class="p-2 text-slate-400 hover:text-red-500 transition-colors"
+                        >
+                          <span class="material-symbols-outlined text-xl"
+                            >delete</span
+                          >
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div
+              class="p-6 border-t border-slate-200 dark:border-slate-800 flex items-center justify-between"
+            >
+              <p class="text-sm text-slate-500">
+                Menampilkan 3 dari 124 artikel
+              </p>
+              <div class="flex gap-2">
+                <button
+                  class="px-3 py-1 border border-slate-200 dark:border-slate-800 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800 text-sm disabled:opacity-50"
+                  disabled=""
+                >
+                  Sebelumnya
+                </button>
+                <button
+                  class="px-3 py-1 bg-primary text-white rounded-md text-sm"
+                >
+                  1
+                </button>
+                <button
+                  class="px-3 py-1 border border-slate-200 dark:border-slate-800 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800 text-sm"
+                >
+                  2
+                </button>
+                <button
+                  class="px-3 py-1 border border-slate-200 dark:border-slate-800 rounded-md hover:bg-slate-50 dark:hover:bg-slate-800 text-sm"
+                >
+                  Selanjutnya
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- Editor Section (Form Tulis Artikel Baru) -->
+          <div
+            class="mt-12 bg-white dark:bg-slate-900 rounded-2xl border border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden"
+          >
+            <div class="p-6 border-b border-slate-200 dark:border-slate-800">
+              <h3 class="text-xl font-bold">Tulis Artikel Baru</h3>
+              <p class="text-sm text-slate-500">
+                Buat konten menarik untuk audiens Anda.
+              </p>
+            </div>
+            <div class="p-8">
+              <form class="space-y-6">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  <!-- Left Column: Fields -->
+                  <div class="lg:col-span-2 space-y-6">
+                    <div class="space-y-2">
+                      <label class="text-sm font-semibold">Judul Artikel</label>
+                      <input
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-base transition-all"
+                        placeholder="Masukkan judul artikel yang menarik..."
+                        type="text"
+                      />
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-sm font-semibold">Isi Konten</label>
+                      <!-- Simple Rich Text Editor Mockup -->
+                      <div
+                        class="border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden"
+                      >
+                        <div
+                          class="bg-slate-50 dark:bg-slate-800 p-2 border-b border-slate-200 dark:border-slate-800 flex flex-wrap gap-1"
+                        >
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >format_bold</span
+                            >
+                          </button>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >format_italic</span
+                            >
+                          </button>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >format_underlined</span
+                            >
+                          </button>
+                          <div
+                            class="w-px h-6 bg-slate-300 dark:bg-slate-700 mx-1 self-center"
+                          ></div>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >format_list_bulleted</span
+                            >
+                          </button>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >format_list_numbered</span
+                            >
+                          </button>
+                          <div
+                            class="w-px h-6 bg-slate-300 dark:bg-slate-700 mx-1 self-center"
+                          ></div>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >link</span
+                            >
+                          </button>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >image</span
+                            >
+                          </button>
+                          <button
+                            class="p-2 hover:bg-slate-200 dark:hover:bg-slate-700 rounded transition-colors"
+                            type="button"
+                          >
+                            <span class="material-symbols-outlined text-lg"
+                              >code</span
+                            >
+                          </button>
+                        </div>
+                        <textarea
+                          class="w-full px-4 py-4 dark:bg-slate-900 border-none focus:ring-0 outline-none resize-none min-h-[300px]"
+                          placeholder="Tuliskan isi artikel Anda di sini..."
+                          rows="12"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Right Column: Meta & Upload -->
+                  <div class="space-y-6">
+                    <div class="space-y-2">
+                      <label class="text-sm font-semibold"
+                        >Upload Gambar Utama</label
+                      >
+                      <div
+                        class="border-2 border-dashed border-slate-200 dark:border-slate-800 rounded-xl p-8 flex flex-col items-center justify-center text-center group hover:border-primary transition-colors cursor-pointer"
+                      >
+                        <div
+                          class="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mb-4"
+                        >
+                          <span class="material-symbols-outlined"
+                            >upload_file</span
+                          >
+                        </div>
+                        <p class="text-sm font-medium">
+                          Klik untuk upload atau drag and drop
+                        </p>
+                        <p class="text-xs text-slate-400 mt-1">
+                          PNG, JPG, JPEG (Max. 2MB)
+                        </p>
+                      </div>
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-sm font-semibold">Kategori</label>
+                      <select
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                      >
+                        <option value="">Pilih Kategori</option>
+                        <option value="tips">Tips &amp; Trick</option>
+                        <option value="edukasi">Edukasi</option>
+                        <option value="promo">Promo</option>
+                        <option value="berita">Berita Percetakan</option>
+                      </select>
+                    </div>
+                    <div class="space-y-2">
+                      <label class="text-sm font-semibold"
+                        >Tags (Pisahkan dengan koma)</label
+                      >
+                      <input
+                        class="w-full px-4 py-3 rounded-xl border border-slate-200 dark:border-slate-800 dark:bg-slate-900 focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+                        placeholder="e.g. print, design, brosur"
+                        type="text"
+                      />
+                    </div>
+                    <div
+                      class="p-4 bg-slate-50 dark:bg-slate-800 rounded-xl space-y-4"
+                    >
+                      <h4
+                        class="text-sm font-bold border-b border-slate-200 dark:border-slate-700 pb-2"
+                      >
+                        Status Publikasi
+                      </h4>
+                      <div class="flex items-center justify-between">
+                        <span class="text-sm">Terbitkan Sekarang</span>
+                        <button
+                          class="w-10 h-6 bg-primary rounded-full relative flex items-center px-1"
+                          type="button"
+                        >
+                          <div
+                            class="w-4 h-4 bg-white rounded-full ml-auto"
+                          ></div>
+                        </button>
+                      </div>
+                      <div class="flex gap-2 pt-2">
+                        <button
+                          class="flex-1 py-2 text-sm font-bold border border-slate-200 dark:border-slate-700 rounded-lg hover:bg-white dark:hover:bg-slate-900 transition-colors"
+                          type="button"
+                        >
+                          Draft
+                        </button>
+                        <button
+                          class="flex-1 py-2 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
+                          type="submit"
+                        >
+                          Simpan
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
